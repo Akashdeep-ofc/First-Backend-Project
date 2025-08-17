@@ -1,0 +1,7 @@
+.env
+__pycache__
+Fast/
+.vscode/
+database_MultiModel.py
+database_SingleModel.py
+SQL_Based_PostsDB.py
