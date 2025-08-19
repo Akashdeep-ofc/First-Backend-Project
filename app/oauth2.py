@@ -6,13 +6,19 @@ from jose import JWTError, jwt
 from datetime import datetime,timedelta
 from . import schemas,models
 from .database import SessionDep
-from .config import settings
+# from .config import settings
+from .config import settingsRender
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
 
-SECRET_KEY = settings.secret_key
-ALGORITHM = settings.algorithm
-ACCESS_TOKEN_EXPIRE_MINUTES = settings.access_token_expire_minutes
+# SECRET_KEY = settings.secret_key
+# ALGORITHM = settings.algorithm
+# ACCESS_TOKEN_EXPIRE_MINUTES = settings.access_token_expire_minutes
+
+# For Render Setup :-
+SECRET_KEY = settingsRender.secret_key
+ALGORITHM = settingsRender.algorithm
+ACCESS_TOKEN_EXPIRE_MINUTES = settingsRender.access_token_expire_minutes
 
 def create_access_token(data:dict):
     token = data.copy()

@@ -14,10 +14,13 @@ class Settings(BaseSettings):
         env_file = ".env"
 
 class SettingsRender(BaseSettings):
+    secret_key:str
+    algorithm:str
+    access_token_expire_minutes:int
     database_url:str
 
     class Config:
         env_file = ".env"
 
-settings = Settings()
+# settings = Settings()
 settingsRender = SettingsRender()

@@ -2,10 +2,14 @@ from typing import Annotated
 from fastapi import Depends
 from sqlmodel import create_engine,SQLModel,Session
 from sqlalchemy import text
-from .config import settings
+# from .config import settings
+from .config import settingsRender
 
 
-postgres_url = f"postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}"
+# postgres_url = f"postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}"
+
+# For Render:
+postgres_url = f"{settingsRender.database_url}"
 engine = create_engine(postgres_url)
 
 
