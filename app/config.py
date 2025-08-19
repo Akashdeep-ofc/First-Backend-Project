@@ -13,5 +13,11 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
 
+class SettingsRender(BaseSettings):
+    database_url:str
+
+    class Config:
+        env_file = ".env"
 
 settings = Settings()
+settingsRender = SettingsRender()
